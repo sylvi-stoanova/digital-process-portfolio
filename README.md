@@ -54,6 +54,14 @@ Der bestehende manuelle Prozess wird um eine digitale Vorprüfung ergänzt. Ziel
 
 ### Rollenverteilung
 
+### Testkategorien
+
+Für den Proof of Concept werden drei fiktive Fachabteilungen verwendet:
+
+- **Abteilung A – Abfallservice:** Mülltonnen, Müllabholung und Abfall
+- **Abteilung B – Straßen & Beleuchtung:** Straßenschäden und Straßenbeleuchtung
+- **Abteilung C – Bürgerservice:** Ausweise und Meldeangelegenheiten
+
 | System | Mitarbeitende |
 | --- | --- |
 | Anfrage analysieren | Empfehlung überprüfen |
