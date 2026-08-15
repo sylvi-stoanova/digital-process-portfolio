@@ -22,7 +22,7 @@ Der weitere Prozess bleibt unter menschlicher Kontrolle:
 4. Bestätigung oder Korrektur der Zuordnung
 5. Dokumentation des Ergebnisses
 
-#Prozessprinzip
+## Prozessprinzip
 
 Eingehende Anfrage -> digitale Vorprüfung -> Zuordnungsvorschlag -> menschliche Prüfung -> Bestätigung / Korrektur -> Dokumentation
 
