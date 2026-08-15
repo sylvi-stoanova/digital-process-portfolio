@@ -1,6 +1,6 @@
 # Mini Case Study: Digitalisierung eines Verwaltungsprozesses
 
-Prozessanalyse | Digitale Lösungskonzepte | Test & Evaluation
+|Prozessanalyse | Digitale Lösungskonzepte | Test & Evaluation|
 
 ## Ausgangssituation
 
@@ -16,13 +16,13 @@ als Proof of Concept getestet.
 Das System analysiert eine eingehende Anfrage und schlägt eine von drei möglichen Fachabteilungen vor.
 Der weitere Prozess bleibt unter menschlicher Kontrolle:
 
-**1.** Digitale Analyse der Anfrage
-**2.** Vorschlag einer zuständigen Fachabteilung
-**3.** Prüfung durch einen Mitarbeitenden
-**4.** Bestätigung oder Korrektur der Zuordnung
-**5.** Dokumentation des Ergebnisses
+1. Digitale Analyse der Anfrage
+2. Vorschlag einer zuständigen Fachabteilung
+3. Prüfung durch einen Mitarbeitenden
+4. Bestätigung oder Korrektur der Zuordnung
+5. Dokumentation des Ergebnisses
 
-##Prozessprinzip
+#Prozessprinzip
 
 Eingehende Anfrage -> digitale Vorprüfung -> Zuordnungsvorschlag -> menschliche Prüfung -> Bestätigung / Korrektur -> Dokumentation
 
