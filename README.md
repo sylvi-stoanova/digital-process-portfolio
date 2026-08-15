@@ -18,25 +18,25 @@ Die endgültige Entscheidung bleibt beim Mitarbeitenden.
 
  **Bürgeranfrage**
 
-↓
+        ↓
 
 **Digitale Vorprüfung**
 
-↓
+        ↓
 
 **Empfehlung: Fachabteilung A, B oder C**
 
-↓
+        ↓
 
 **Mitarbeitender prüft die Empfehlung**
 
-↓
+        ↓
 
 | Empfehlung korrekt | Empfehlung nicht korrekt |
 | --- | --- |
 | Zuordnung bestätigen | Zuordnung korrigieren |
 
-↓
+        ↓
 
 **Endgültige Zuordnung dokumentieren**
 
