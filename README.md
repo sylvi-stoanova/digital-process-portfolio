@@ -35,3 +35,29 @@ Der weitere Prozess bleibt unter menschlicher Kontrolle:
 **Testdaten:** ausschließlich fiktive Daten
 **Schwerpunkte:** Prozessanalyse, Digitalisierung, Anforderungsdefinition, Teststellung, Human-in-the-Loop
 
+
+---
+
+## Soll-Prozess
+
+Der bestehende manuelle Prozess wird um eine digitale Vorprüfung ergänzt. Ziel ist es, die Zuordnung eingehender Anfragen zu unterstützen, ohne die fachliche Entscheidung vollständig zu automatisieren.
+
+### Ablauf
+
+1. Eine neue Anfrage geht ein.
+2. Der Inhalt wird digital analysiert.
+3. Das System empfiehlt **Abteilung A, B oder C**.
+4. Ein Mitarbeitender überprüft die Empfehlung.
+5. Bei Zustimmung wird die vorgeschlagene Abteilung bestätigt.
+6. Bei Ablehnung wählt der Mitarbeitende die richtige Abteilung aus.
+7. Die endgültige Zuordnung wird dokumentiert.
+
+### Rollenverteilung
+
+| System | Mitarbeitende |
+| --- | --- |
+| Anfrage analysieren | Empfehlung überprüfen |
+| Abteilung vorschlagen | Vorschlag bestätigen oder korrigieren |
+| Ergebnis bereitstellen | Endgültige Zuordnung festlegen |
+
+> **Wichtig:** Das System trifft keine endgültige Entscheidung. Die Verantwortung für die Zuordnung verbleibt beim Mitarbeitenden.
