@@ -1,2 +1,2 @@
 # digital-process-portfolio
-Mini Case Sudies - Digita Process, Automation &amp; AI
+Mini Case Sudies - Digital Process, Automation & AI
