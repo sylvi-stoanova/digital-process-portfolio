@@ -1,6 +1,6 @@
 # Mini Case Study: Digitalisierung eines Verwaltungsprozesses
 
-**Prozessanalyse | Digitale Lösungskonzepte | Test & Evaluation**
+Prozessanalyse | Digitale Lösungskonzepte | Test & Evaluation
 
 ## Ausgangssituation
 
@@ -26,7 +26,7 @@ Der weitere Prozess bleibt unter menschlicher Kontrolle:
 
 Eingehende Anfrage -> digitale Vorprüfung -> Zuordnungsvorschlag -> menschliche Prüfung -> Bestätigung / Korrektur -> Dokumentation
 
->** Leitgedanke:** Technologie unterstützt den Verwaltungsprozess. Fachliche Kontrolle und Entscheidung verbleiben beim Menschen.
+>Leitgedanke: Technologie unterstützt den Verwaltungsprozess. Fachliche Kontrolle und Entscheidung verbleiben beim Menschen.
 
 **Projektart:** Mini Proof of Concept
 **Testdaten:** ausschließlich fiktive Daten
