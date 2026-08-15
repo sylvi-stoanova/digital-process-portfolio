@@ -16,29 +16,29 @@ Die endgültige Entscheidung bleibt beim Mitarbeitenden.
 
 ## Soll-Prozess
 
-📧 **Bürgeranfrage**
+ **Bürgeranfrage**
 
 ↓
 
-⚙️ **Digitale Vorprüfung**
+**Digitale Vorprüfung**
 
 ↓
 
-💡 **Empfehlung: Fachabteilung A, B oder C**
+**Empfehlung: Fachabteilung A, B oder C**
 
 ↓
 
-👤 **Mitarbeitender prüft die Empfehlung**
+**Mitarbeitender prüft die Empfehlung**
 
 ↓
 
-| ✅ Empfehlung korrekt | ✏️ Empfehlung nicht korrekt |
+| Empfehlung korrekt | Empfehlung nicht korrekt |
 | --- | --- |
 | Zuordnung bestätigen | Zuordnung korrigieren |
 
 ↓
 
-📝 **Endgültige Zuordnung dokumentieren**
+**Endgültige Zuordnung dokumentieren**
 
 > **Human-in-the-Loop:** Die digitale Lösung unterstützt den Prozess.  
 > Die fachliche Entscheidung und Kontrolle verbleiben beim Menschen.
@@ -49,7 +49,7 @@ Die endgültige Entscheidung bleibt beim Mitarbeitenden.
 
 Für den Proof of Concept werden drei fiktive Fachabteilungen verwendet:
 
-| 🗑️ **A – Abfallservice** | 💡 **B – Straßen & Beleuchtung** | 🪪 **C – Bürgerservice** |
+| **A – Abfallservice** | **B – Straßen & Beleuchtung** | **C – Bürgerservice** |
 | --- | --- | --- |
 | Mülltonnen | Straßenlaternen | Ausweise |
 | Müllabholung | Straßenschäden | Meldeangelegenheiten |
@@ -58,7 +58,7 @@ Für den Proof of Concept werden drei fiktive Fachabteilungen verwendet:
 
 ### Rollenverteilung
 
-| 💻 **Digitale Lösung** | 👤 **Mitarbeitende** |
+| **Digitale Lösung** | **Mitarbeitende** |
 | --- | --- |
 | Anfrage analysieren | Empfehlung prüfen |
 | Fachabteilung empfehlen | Bestätigen oder korrigieren |
@@ -68,7 +68,7 @@ Für den Proof of Concept werden drei fiktive Fachabteilungen verwendet:
 
 ## Mini-Demo
 
-🚧 **Proof of Concept in Umsetzung**
+**Proof of Concept in Umsetzung**
 
 Die technische Demo bildet bewusst nur einen kleinen Teil des Gesamtprozesses ab:
 
@@ -80,7 +80,7 @@ Die Umsetzung und verwendeten Werkzeuge werden nach Fertigstellung des Prototyps
 
 ## Testergebnis
 
-🚧 **Wird nach Durchführung der Teststellung ergänzt.**
+**Wird nach Durchführung der Teststellung ergänzt.**
 
 Der Prototyp wird mit wenigen fiktiven Bürgeranfragen getestet. Dabei wird geprüft, ob die vorgeschlagene Fachabteilung mit der erwarteten Zuordnung übereinstimmt.
 
@@ -88,7 +88,7 @@ Der Prototyp wird mit wenigen fiktiven Bürgeranfragen getestet. Dabei wird gepr
 
 ## Erkenntnisse
 
-🚧 **Wird nach Abschluss der Teststellung ergänzt.**
+ **Wird nach Abschluss der Teststellung ergänzt.**
 
 Bewertet werden insbesondere:
 
