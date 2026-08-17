@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digitalisierung eines Verwaltungsprozesses</title>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #667085;
+      --blue: #2457c5;
+      --blue-light: #eef4ff;
+      --green: #157347;
+      --green-light: #eaf7ef;
+      --border: #d9e1ec;
+      --warning: #9a6700;
+      --warning-light: #fff6dd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 64px 0 52px;
+    }
+
+    header h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.1;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.94;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding: 42px 0 70px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: 1.6rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 6px 20px rgba(31, 41, 55, 0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .process {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .step {
+      background: var(--blue-light);
+      border: 1px solid #c8d8ff;
+      color: #163b83;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .arrow {
+      color: var(--muted);
+      font-size: 1.3rem;
+    }
+
+    .demo {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 8px 26px rgba(31, 41, 55, 0.07);
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      font: inherit;
+      color: var(--text);
+      background: white;
+    }
+
+    textarea:focus {
+      outline: 2px solid #bfd1ff;
+      border-color: var(--blue);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 18px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .secondary {
+      background: #eef1f5;
+      color: var(--text);
+    }
+
+    .example {
+      background: var(--blue-light);
+      color: #163b83;
+    }
+
+    .result {
+      display: none;
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--green-light);
+      border: 1px solid #b9dfc8;
+    }
+
+    .result strong {
+      color: var(--green);
+    }
+
+    .review {
+      margin-top: 12px;
+      padding: 12px;
+      background: var(--warning-light);
+      border: 1px solid #ead49a;
+      border-radius: 10px;
+      color: #6d5200;
+    }
+
+    .departments {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .department {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: white;
+    }
+
+    .department span {
+      display: block;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .note {
+      background: #f8fafc;
+      border-left: 4px solid var(--blue);
+      padding: 15px 17px;
+      border-radius: 8px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tech span {
+      background: #eef1f5;
+      padding: 7px 11px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .grid-3,
+      .departments {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-top: 44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h1>Digitalisierung eines Verwaltungsprozesses</h1>
+    <p>
+      Mini Proof of Concept zur digitalen Vorprüfung eingehender Bürgeranfragen.
+      Ziel ist eine nachvollziehbare Unterstützung der Mitarbeitenden – nicht die
+      vollständige Automatisierung der fachlichen Entscheidung.
+    </p>
+
+    <div class="tags">
+      <span class="tag">Prozessanalyse</span>
+      <span class="tag">Digitale Verwaltung</span>
+      <span class="tag">Human-in-the-Loop</span>
+      <span class="tag">n8n</span>
+      <span class="tag">Ollama / Mistral</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section>
+    <h2>Ausgangssituation & Ziel</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. Problem</h3>
+        <p>
+          Eingehende Bürgeranfragen müssen gelesen und der zuständigen
+          Fachabteilung zugeordnet werden.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>2. Lösungsansatz</h3>
+        <p>
+          Eine digitale Vorprüfung schlägt den passenden Fachbereich vor.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>3. Kontrolle</h3>
+        <p>
+          Mitarbeitende bestätigen oder korrigieren die Empfehlung vor der
+          weiteren Bearbeitung.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Soll-Prozess</h2>
+
+    <div class="process">
+      <div class="step">📧 Bürgeranfrage</div>
+      <div class="arrow">→</div>
+      <div class="step">⚙ Digitale Vorprüfung</div>
+      <div class="arrow">→</div>
+      <div class="step">💡 Fachbereich empfehlen</div>
+      <div class="arrow">→</div>
+      <div class="step">👤 Mitarbeiterprüfung</div>
+      <div class="arrow">→</div>
+      <div class="step">📝 Dokumentation</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Demo ausprobieren</h2>
+
+    <div class="demo">
+
+      <label for="request">Fiktive Bürgeranfrage</label>
+
+      <textarea id="request"
+        placeholder="Beispiel: Unsere Mülltonne wurde gestern nicht geleert."></textarea>
+
+      <div class="buttons">
+        <button class="example" onclick="exampleWaste()">Beispiel Abfall</button>
+        <button class="example" onclick="exampleStreet()">Beispiel Straße</button>
+        <button class="example" onclick="exampleCitizen()">Beispiel Bürgerservice</button>
+      </div>
+
+      <button class="primary" onclick="classifyRequest()">Anfrage analysieren</button>
+      <button class="secondary" onclick="resetDemo()">Zurücksetzen</button>
+
+      <div id="result" class="result">
+        <div>
+          <strong>Empfohlener Fachbereich:</strong>
+          <span id="department"></span>
+        </div>
+
+        <div style="margin-top:8px;">
+          <strong>Systemstatus:</strong>
+          Digitale Vorprüfung abgeschlossen
+        </div>
+
+        <div class="review">
+          👤 <strong>Mitarbeiterprüfung erforderlich:</strong>
+          Die vorgeschlagene Zuordnung würde im realen Workflow bestätigt oder korrigiert.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Testbereiche</h2>
+
+    <div class="departments">
+      <div class="department">
+        <span>A – Abfallservice</span>
+        Mülltonnen, Müllabholung und Abfall
+      </div>
+
+      <div class="department">
+        <span>B – Straßen & Beleuchtung</span>
+        Straßenschäden und Straßenbeleuchtung
+      </div>
+
+      <div class="department">
+        <span>C – Bürgerservice</span>
+        Ausweise und Meldeangelegenheiten
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technische Umsetzung</h2>
+
+    <div class="card">
+      <p>
+        Der funktionierende Proof of Concept wurde in n8n umgesetzt.
+        Eingehende Test-E-Mails werden verarbeitet, mit einem lokal betriebenen
+        Sprachmodell klassifiziert und anschließend regelbasiert an den passenden
+        Fachbereich weitergeleitet.
+      </p>
+
+      <p>
+        Die Mitarbeiterentscheidung wird als Human-in-the-Loop-Schritt
+        abgebildet. Erst nach Bestätigung wird das Ergebnis dokumentiert und
+        eine Abschlussnachricht erzeugt.
+      </p>
+
+      <div class="tech">
+        <span>n8n</span>
+        <span>Docker</span>
+        <span>Ollama</span>
+        <span>Mistral</span>
+        <span>Gmail</span>
+        <span>GitHub Pages</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Erkenntnis aus der Teststellung</h2>
+
+    <div class="note">
+      Der erste Ansatz mit einem spezialisierten Text-Classifier führte beim
+      lokalen Modell zu Problemen mit dem erwarteten strukturierten Ausgabeformat.
+      Der Workflow wurde daraufhin vereinfacht: Das Sprachmodell liefert nur eine
+      Klassifikation A, B oder C; die deterministische Prozesssteuerung übernimmt n8n.
+      Dadurch wurde die Lösung einfacher, nachvollziehbarer und robuster.
+    </div>
+  </section>
+
+  <section>
+    <h2>Abgrenzung</h2>
+
+    <div class="card">
+      <p>
+        Diese Seite ist eine Portfolio-Fallstudie mit ausschließlich fiktiven
+        Testdaten. Die öffentliche Demo simuliert die Klassifikation, damit sie
+        unabhängig von einer laufenden lokalen Infrastruktur jederzeit
+        ausprobiert werden kann.
+      </p>
+
+      <p>
+        Der vollständige technische Workflow wurde separat lokal mit n8n,
+        Docker, Ollama/Mistral und Gmail umgesetzt und getestet.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    Portfolio Case Study · Digitalisierung · Prozessoptimierung · 2026
+  </div>
+</footer>
+
+<script>
+  function normalize(text) {
+    return text.toLowerCase();
+  }
+
+  function classifyRequest() {
+    const input = document.getElementById("request").value.trim();
+    const result = document.getElementById("result");
+    const department = document.getElementById("department");
+
+    if (!input) {
+      alert("Bitte zuerst eine fiktive Bürgeranfrage eingeben.");
+      return;
+    }
+
+    const text = normalize(input);
+
+    const wasteWords = [
+      "müll", "mülltonne", "abfall", "tonne",
+      "abholung", "restmüll", "biomüll"
+    ];
+
+    const streetWords = [
+      "straße", "strasse", "straßenlaterne",
+      "laterne", "beleuchtung", "straßenschaden",
+      "loch", "fahrbahn"
+    ];
+
+    const citizenWords = [
+      "ausweis", "personalausweis", "reisepass",
+      "wohnsitz", "anmeldung", "ummeldung",
+      "melde", "bürgeramt"
+    ];
+
+    const score = {
+      waste: 0,
+      street: 0,
+      citizen: 0
+    };
+
+    wasteWords.forEach(word => {
+      if (text.includes(word)) score.waste++;
+    });
+
+    streetWords.forEach(word => {
+      if (text.includes(word)) score.street++;
+    });
+
+    citizenWords.forEach(word => {
+      if (text.includes(word)) score.citizen++;
+    });
+
+    const highest = Math.max(score.waste, score.street, score.citizen);
+
+    if (highest === 0) {
+      department.textContent = "Unklar – manuelle Prüfung";
+    } else if (score.waste === highest) {
+      department.textContent = "A – Abfallservice";
+    } else if (score.street === highest) {
+      department.textContent = "B – Straßen & Beleuchtung";
+    } else {
+      department.textContent = "C – Bürgerservice";
+    }
+
+    result.style.display = "block";
+  }
+
+  function resetDemo() {
+    document.getElementById("request").value = "";
+    document.getElementById("result").style.display = "none";
+  }
+
+  function exampleWaste() {
+    document.getElementById("request").value =
+      "Guten Tag, unsere Mülltonne wurde gestern nicht geleert. Können Sie bitte prüfen, woran das liegt?";
+  }
+
+  function exampleStreet() {
+    document.getElementById("request").value =
+      "Guten Tag, die Straßenlaterne vor unserem Haus ist seit mehreren Tagen defekt.";
+  }
+
+  function exampleCitizen() {
+    document.getElementById("request").value =
+      "Guten Tag, ich möchte wissen, welche Unterlagen ich für die Anmeldung meines Wohnsitzes benötige.";
+  }
+</script>
+
+</body>
+</html>
